@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #f0f2f5;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DashboardController">
+
+    <!-- Left Sidebar -->
+    <Pane layoutX="14.0" layoutY="34.0" prefHeight="610.0" prefWidth="280" style="-fx-background-color: #3498db; -fx-background-radius: 30; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.3, 0, 5);">
+        
+        <!-- User Greeting -->
+        <Text layoutX="57.0" layoutY="72.0" style="-fx-font-size: 32px; -fx-fill: white; -fx-font-weight: bold;" text="Hello User!" />
+        
+        <!-- Navigation Buttons -->
+        <Button fx:id="btnManageProfile" layoutX="20.0" layoutY="115.0" onAction="#handleManageProfile" prefHeight="55" prefWidth="240" style="-fx-background-color: white; -fx-text-fill: #3498db; -fx-font-size: 18px; -fx-font-weight: bold; -fx-background-radius: 10;" text="Manage Profile" />
+        <Button fx:id="btnManageBudget" layoutX="20.0" layoutY="187.0" onAction="#handleManageBudget" prefHeight="55" prefWidth="240" style="-fx-background-color: white; -fx-text-fill: #3498db; -fx-font-size: 18px; -fx-font-weight: bold; -fx-background-radius: 10;" text="Manage Budget" />
+        <Button fx:id="btnManageExpenses" layoutX="20.0" layoutY="258.0" onAction="#handleManageExpenses" prefHeight="55" prefWidth="240" style="-fx-background-color: white; -fx-text-fill: #3498db; -fx-font-size: 18px; -fx-font-weight: bold; -fx-background-radius: 10;" text="Manage Expenses" />
+        <Button fx:id="btnSavings" layoutX="20.0" layoutY="331.0" onAction="#handleSavings" prefHeight="55" prefWidth="240" style="-fx-background-color: white; -fx-text-fill: #3498db; -fx-font-size: 18px; -fx-font-weight: bold; -fx-background-radius: 10;" text="Savings" />
+        <Button fx:id="btnGenerateReport" layoutX="20.0" layoutY="401.0" onAction="#handleGenerateReport" prefHeight="55" prefWidth="240" style="-fx-background-color: white; -fx-text-fill: #3498db; -fx-font-size: 18px; -fx-font-weight: bold; -fx-background-radius: 10;" text="Generate Report" />
+        <Button fx:id="btnLogout" layoutX="20.0" layoutY="541.0" onAction="#handleLogout" prefHeight="55" prefWidth="240" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold; -fx-background-radius: 10;" text="Logout" />
+     <Button fx:id="btnManageProfile1" layoutX="20.0" layoutY="470.0" onAction="#handleDashboard" prefHeight="55" prefWidth="240" style="-fx-background-color: white; -fx-text-fill: #3498db; -fx-font-size: 18px; -fx-font-weight: bold; -fx-background-radius: 10;" text="Dashboard" />
+    </Pane>
+
+    <!-- Top Header Bar - Now only shows on Dashboard -->
+    <Pane fx:id="dashboardHeader" layoutX="320.0" layoutY="34.0" prefHeight="100.0" prefWidth="940.0" style="-fx-background-color: #3498db; -fx-background-radius: 30; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.3, 0, 5);">
+        <Label layoutX="400.0" layoutY="30.0" style="-fx-font-size: 36px; -fx-text-fill: white; -fx-font-weight: bold;" text="Dashboard" />
+        
+        <!-- User Profile Icon -->
+        <ImageView fitHeight="40" fitWidth="40" layoutX="860" layoutY="30" preserveRatio="true">
+            <image>
+                <Image url="@../images/user-icon.png" />
+            </image>
+        </ImageView>
+    </Pane>
+
+    <!-- Main Content Area -->
+    <StackPane fx:id="contentPane" layoutX="320.0" layoutY="150.0" prefHeight="520.0" prefWidth="940.0">
+        <VBox alignment="TOP_CENTER" spacing="30" style="-fx-padding: 20;">
+            <!-- Statistics Cards Row -->
+            <HBox alignment="CENTER" spacing="20">
+                <!-- Monthly Budget Card -->
+                <VBox prefHeight="180" prefWidth="280" style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);">
+                    <Label style="-fx-font-size: 16px; -fx-text-fill: #7f8c8d;" text="Monthly Budget" />
+                    <Label fx:id="monthlyBudgetLabel" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #3498db;" text="125" />
+                    <HBox alignment="CENTER_LEFT" spacing="5">
+                        <ImageView fx:id="budgetTrendIcon" fitHeight="20" fitWidth="20" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/trend-up.png" />
+                            </image>
+                        </ImageView>
+                        <Label fx:id="budgetTrendLabel" style="-fx-text-fill: #2ecc71; -fx-font-size: 14px;" text="+12% from last month" />
+                    </HBox>
+                </VBox>
+
+                <!-- Monthly Expense Card -->
+                <VBox prefHeight="180" prefWidth="280" style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);">
+                    <Label style="-fx-font-size: 16px; -fx-text-fill: #7f8c8d;" text="Monthly Expense" />
+                    <Label fx:id="monthlyExpenseLabel" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #2ecc71;" text="89" />
+                    <HBox alignment="CENTER_LEFT" spacing="5">
+                        <ImageView fx:id="expenseTrendIcon" fitHeight="20" fitWidth="20" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/trend-up.png" />
+                            </image>
+                        </ImageView>
+                        <Label fx:id="expenseTrendLabel" style="-fx-text-fill: #2ecc71; -fx-font-size: 14px;" text="+8% from last month" />
+                    </HBox>
+                </VBox>
+
+                <!-- Total Savings Card -->
+                <VBox prefHeight="180" prefWidth="280" style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);">
+                    <Label style="-fx-font-size: 16px; -fx-text-fill: #7f8c8d;" text="Total Savings" />
+                    <Label fx:id="totalSavingsLabel" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #e74c3c;" text="36" />
+                    <HBox alignment="CENTER_LEFT" spacing="5">
+                        <ImageView fx:id="savingsTrendIcon" fitHeight="20" fitWidth="20" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/trend-down.png" />
+                            </image>
+                        </ImageView>
+                        <Label fx:id="savingsTrendLabel" style="-fx-text-fill: #e74c3c; -fx-font-size: 14px;" text="-5% from last month" />
+                    </HBox>
+                </VBox>
+            </HBox>
+
+            <!-- Line Charts for Expense Trends -->
+            <HBox alignment="CENTER" spacing="20">
+                <!-- Monthly Expense Trends Chart -->
+                <VBox prefHeight="300" prefWidth="460" style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);">
+                    <Label style="-fx-font-size: 16px; -fx-text-fill: #7f8c8d;" text="Monthly Expense Trends" />
+               <ImageView fitHeight="173.0" fitWidth="312.0">
+                  <image>
+                     <Image url="@../../../Downloads/monthchart.png" />
+                  </image>
+               </ImageView>
+                </VBox>
+
+                <!-- Yearly Expense Trends Chart -->
+                <VBox prefHeight="300" prefWidth="460" style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);">
+                    <Label style="-fx-font-size: 16px; -fx-text-fill: #7f8c8d;" text="Yearly Expense Trends" />
+               <ImageView fitHeight="200.0" fitWidth="336.0">
+                  <image>
+                     <Image url="@../../../Downloads/yearchart.png" />
+                  </image>
+               </ImageView>
+                </VBox>
+            </HBox>
+        </VBox>
+    </StackPane>
+</AnchorPane>

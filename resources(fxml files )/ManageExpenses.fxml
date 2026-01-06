@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.ManageExpensesController" fitToWidth="true">
+    <VBox spacing="20" style="-fx-padding: 20;">
+        <Label text="Manage Your Expenses" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #3498db;" />
+
+        <!-- Category Buttons Section -->
+        <VBox spacing="10" fx:id="categoryBox" style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 20;">
+            <Label text="Select Expense Category" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+            <HBox spacing="10">
+                <Button text="Insurance" onAction="#handleCategorySelection"/>
+                <Button text="Utility" onAction="#handleCategorySelection"/>
+                <Button text="Education" onAction="#handleCategorySelection"/>
+                <Button text="Medical" onAction="#handleCategorySelection"/>
+                <Button text="Transport" onAction="#handleCategorySelection"/>
+                <Button text="Clothing" onAction="#handleCategorySelection"/>
+                <Button text="Entertainment" onAction="#handleCategorySelection"/>
+                <Button text="Miscellaneous" onAction="#handleCategorySelection"/>
+                <Button text="Rent" onAction="#handleCategorySelection"/>
+            </HBox>
+        </VBox>
+
+        <!-- Dynamic Form Section (initially hidden) -->
+        <VBox spacing="10" fx:id="formBox" visible="false" managed="false"
+              style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 20;">
+            <Label fx:id="selectedCategoryLabel" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+            <TextField fx:id="expenseAmountField" promptText="Enter Amount" />
+            <TextField fx:id="descriptionField" promptText="Enter Description" />
+            <ComboBox fx:id="typeComboBox" promptText="Select Type" />
+            <DatePicker fx:id="expenseDatePicker" />
+            <Button text="Add Expense" onAction="#handleAddExpense" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" />
+        </VBox>
+    </VBox>
+</ScrollPane>

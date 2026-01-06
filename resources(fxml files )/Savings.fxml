@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="application.SavingsController"
+      spacing="20" style="-fx-padding: 20; -fx-background-color: white; -fx-background-radius: 15;">
+    
+    <Label text="Your Savings" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #3498db;" />
+
+    <HBox spacing="10">
+        <Label text="Amount:" />
+        <TextField fx:id="savingsAmountField" promptText="Enter amount" />
+        <Button text="Add Saving" onAction="#handleAddSaving"
+                style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold;" />
+    </HBox>
+
+    <TableView fx:id="savingsTable" prefHeight="300">
+        <columns>
+            <TableColumn fx:id="dateColumn" text="Date" prefWidth="150" />
+            <TableColumn fx:id="amountColumn" text="Amount" prefWidth="100" />
+        </columns>
+    </TableView>
+
+</VBox>
