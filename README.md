@@ -1,84 +1,84 @@
-Home Expenditure System
+# Home Expenditure System
 
 The Home Expenditure System is a JavaFX-based desktop application developed using Object-Oriented Programming (OOP) principles. The system is designed to help users manage their personal finances by recording daily, weekly, and monthly expenses, setting budgets, tracking savings, and analyzing financial data through graphical reports.
 
-🔍 Features
---Expense Management
+## 🔍 Features
+- Expense Management
 
---Add, update, and delete expense records
+- Add, update, and delete expense records
 
---Record expenses on a daily, weekly, and monthly basis
+- Record expenses on a daily, weekly, and monthly basis
 
---Categorize expenses into:
+- Categorize expenses into:
 
---Food
+- Food
 
---Education
+- Education
 
---Shopping
+- Shopping
 
---Movies
+- Movies
 
---Dinner
+- Dinner
 
---Medical
+- Medical
 
---Other custom categories
+- Other custom categories
 
---Store expense details including amount, quantity, and description
+- Store expense details including amount, quantity, and description
 
---Budget Management
+- Budget Management
 
---Create and manage weekly and monthly budgets
+- Create and manage weekly and monthly budgets
 
---Compare expenses against defined budgets
+- Compare expenses against defined budgets
 
---Monitor overspending and budget utilization
+- Monitor overspending and budget utilization
 
---Savings Management
+- Savings Management
 
---Add and track savings records
+- Add and track savings records
 
---View total savings over time
+- View total savings over time
 
---Analyze saving trends
+- Analyze saving trends
 
---Reports and Visualization
+- Reports and Visualization
 
---Generate financial reports
+- Generate financial reports
 
---Visualize data using:
+- Visualize data using:
 
---Bar charts
+- Bar charts
 
---Pie charts
+- Pie charts
 
---Line charts
+- Line charts
 
---Category-wise and time-based expense analysis
+- Category-wise and time-based expense analysis
 
-🗄️ Technologies Used
+## 🗄️ Technologies Used
 
---Java (OOP, JavaFX)
+- Java (OOP, JavaFX)
 
---FXML for user interface layout
+- FXML for user interface layout
 
---CSS for UI styling
+- CSS for UI styling
 
---MySQL Workbench for database management
+- MySQL Workbench for database management
 
---JDBC for database connectivity
+- JDBC for database connectivity
 
-📂 Project Structure
+## 📂 Project Structure
 
---src/
+- src/
 
---application/ – Java source code (controllers, models, database logic)
+- application/ – Java source code (controllers, models, database logic)
 
---resources/
+- resources/
 
---css/ – Stylesheets
+- css/ – Stylesheets
 
---fxml/ – User interface layout files
+- fxml/ – User interface layout files
 
---images/ – Image assets
+- images/ – Image assets
